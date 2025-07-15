@@ -29,7 +29,7 @@ const About = ({ data }) => {
             <div className="relative">
               <div className="w-full h-96 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="/api/placeholder/400/400"
+                  src={data.profileImage}
                   alt="Ankit Kumar Yadav"
                   className="w-full h-full object-cover"
                 />
