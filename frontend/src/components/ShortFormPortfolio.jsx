@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Play, Eye, Clock, ExternalLink } from "lucide-react";
+import { Play, Eye, Clock, ExternalLink, Volume2, VolumeX } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 
 const ShortFormPortfolio = ({ data }) => {
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const [isMuted, setIsMuted] = useState(true);
 
   const getYouTubeVideoId = (url) => {
     const regex = /(?:youtube\.com\/shorts\/|youtu\.be\/)([^&\n?#]+)/;
@@ -33,20 +34,29 @@ const ShortFormPortfolio = ({ data }) => {
         >
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-xl font-bold text-white">{video.title}</h3>
-            <Button
-              variant="ghost"
-              onClick={onClose}
-              className="text-white hover:bg-white/10"
-            >
-              ✕
-            </Button>
+            <div className="flex items-center gap-2">
+              <Button
+                variant="ghost"
+                onClick={() => setIsMuted(!isMuted)}
+                className="text-white hover:bg-white/10"
+              >
+                {isMuted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+              </Button>
+              <Button
+                variant="ghost"
+                onClick={onClose}
+                className="text-white hover:bg-white/10"
+              >
+                ✕
+              </Button>
+            </div>
           </div>
           
           <div className="aspect-[9/16] bg-black rounded-lg overflow-hidden mb-4 max-h-96">
             <iframe
               width="100%"
               height="100%"
-              src={`https://www.youtube.com/embed/${videoId}`}
+              src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=${isMuted ? 1 : 0}`}
               title={video.title}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
