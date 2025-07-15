@@ -140,7 +140,7 @@ export const mockData = {
       company: "Cleando Digital",
       content: "Ankit's video editing skills transformed our brand presence. His attention to detail and creative approach to storytelling made our content stand out in the competitive digital marketing space.",
       rating: 5,
-      image: "/api/placeholder/100/100"
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
     },
     {
       id: 2,
@@ -149,7 +149,7 @@ export const mockData = {
       company: "Castonati Channel",
       content: "Working with Ankit has been exceptional. His ability to handle long-form podcasts while maintaining viewer engagement is remarkable. Our channel growth speaks to his expertise.",
       rating: 5,
-      image: "/api/placeholder/100/100"
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
     },
     {
       id: 3,
@@ -158,7 +158,7 @@ export const mockData = {
       company: "Independent Creator",
       content: "Ankit's expertise in podcast editing is unmatched. He understands the nuances of long-form content and delivers polished, professional results every time.",
       rating: 5,
-      image: "/api/placeholder/100/100"
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face"
     }
   ],
 
